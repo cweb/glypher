@@ -1,7 +1,8 @@
 function confuse(input) {
+	var output;
 	if (typeof input === "string") {
 		// Input is a valid string
-
+        output = Confusables[input][(Math.round(Math.random() * (Confusables[input].length - 1)))];
 		// For each charac
 	}
 	return output;
