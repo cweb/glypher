@@ -1,5 +1,6 @@
 function confuse(input) {
 	var output = "";
+	var pointer;
 	if (typeof input === "string") {
 		// Input is a valid string
 
@@ -15,7 +16,18 @@ function confuse(input) {
 
 			// Only confuse things if the char is in the BMP
 			if (chance && v <= 0xFFFF) {
-        		output = output + String.fromCodePoint(Confusables[v][(Math.round(Math.random() * (Confusables[v].length - 1)))]);
+				var newChar;
+				try {
+					pointer = Index[v];
+				}
+				catch (e) {}
+				if (pointer >=0) {
+					// Do this until we get a char not equal to the source char
+					do {
+						newChar = String.fromCodePoint(Confusables[pointer][(Math.round(Math.random() * (Confusables[pointer].length - 1)))]);
+					} while ( newChar.charCodeAt() == v )
+					output += newChar;
+				}
 			}
 			else {
 				output = output + c;
