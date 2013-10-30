@@ -10,23 +10,47 @@ function confuse(input) {
 			var c = input.charAt(i);
 			// Flip a coin to decide whether or not this 
 			// character gets replaced with a confusable
-			var chance = parseInt(Math.random() * 2, 10);
+			var chance = parseInt(Math.random() * 10, 10);
 			// Get the value of the character
 			var v = c.charCodeAt();
 
 			// Only confuse things if the char is in the BMP
 			if (chance && v <= 0xFFFF) {
-				var newChar;
+				var newChar = "";
+				var sourceIndex;   // the source code point
+				var replacement; // the replacement code point(s)
+
 				try {
 					pointer = Index[v];
 				}
 				catch (e) {}
-				if (pointer >=0) {
-					// Do this until we get a char not equal to the source char
-					do {
-						newChar = String.fromCodePoint(Confusables[pointer][(Math.round(Math.random() * (Confusables[pointer].length - 1)))]);
-					} while ( newChar.charCodeAt() == v )
+				if (typeof pointer != "undefined") {
+					// Create a new array with the source character removed,
+					// because there's no reason to return the same character
+					// when this should return a confusable.
+
+					// make a copy of the original array
+					var cons = Confusables[pointer].slice(0);
+					// The source char should only appear once in the array.
+					sourceIndex = cons.indexOf(v);
+					var removed = cons.splice(sourceIndex, 1);
+					replacement = cons[(Math.round(Math.random() * (cons.length - 1)))];
+					// check if an array of confusables was returned
+					if (Object.prototype.toString.call(replacement) === '[object Array]' ) {
+						// The replacement confusables are more than one code points
+						// so build the string.
+						for (var j = 0; j < replacement.length; j++) {
+							newChar += String.fromCodePoint(replacement[j]);
+						}
+					}
+					else if (typeof replacement === 'number') {
+						// Else the replacement is a single code point.
+						newChar = String.fromCodePoint(replacement);
+					}
 					output += newChar;
+				}
+				else {
+					output = output + c;
 				}
 			}
 			else {
