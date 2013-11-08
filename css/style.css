@@ -1,7 +1,11 @@
+body {
+
+}
+
 textarea {
-	font: 12px Arial;
-	margin: 0.5em;
+	font: 12px Arial, sans-serif;
+	margin: 1.0em;
 	border: 3px solid #cccccc;
 	width: 550px;
-	height: 100px;
+	height: 175px;
 }

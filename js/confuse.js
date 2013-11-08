@@ -10,7 +10,7 @@ function confuse(input) {
 			var c = input.charAt(i);
 			// Flip a coin to decide whether or not this 
 			// character gets replaced with a confusable
-			var chance = parseInt(Math.random() * 10, 10);
+			var chance = parseInt(Math.random() * 2, 10);
 			// Get the value of the character
 			var v = c.charCodeAt();
 
@@ -33,7 +33,12 @@ function confuse(input) {
 					var cons = Confusables[pointer].slice(0);
 					// The source char should only appear once in the array.
 					sourceIndex = cons.indexOf(v);
-					var removed = cons.splice(sourceIndex, 1);
+					// Need to handle the case where the array only has one
+					// element, so, not remove it.
+					var removed = {};
+					if (cons.length > 1) {
+						removed = cons.splice(sourceIndex, 1);
+					}
 					replacement = cons[(Math.round(Math.random() * (cons.length - 1)))];
 					// check if an array of confusables was returned
 					if (Object.prototype.toString.call(replacement) === '[object Array]' ) {
@@ -64,6 +69,7 @@ function confuse(input) {
 
 // Insert invisible characters.
 function insertInvisibles(input) {
+   var invisibles = [0x180E, 0x2028, 0x2029, 0x1680 ];
 
 	if (typeof input === "string") {
 		// Input is a valid string
@@ -72,7 +78,7 @@ function insertInvisibles(input) {
 
 // Insert whitespace characters.
 function insertWhitespace(input) {
-
+    var whitespace = [0x0020, 0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2008, 0x2009, 0x200A, 0x00A0, 0x2007, 0x202F ];
 	if (typeof input === "string") {
 		// Input is a valid string
 	}
