@@ -4,7 +4,10 @@ function process(action) {
     var input = document.getElementById("input");
     var output = document.getElementById("output");
     if (action == "confuse") {
-        output.value = confuse(input.value)
+        output.value = confuse(input.value);
+    }
+    if (action == "shrink") {
+        output.value = submit("shrink");
     }
 }
 
@@ -20,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('submit-mirror').addEventListener('click', 
         function() {
             process("mirror");
+        }
+    );
+    document.getElementById('submit-shrink').addEventListener('click', 
+        function() {
+            process("shrink");
         }
     );
 });

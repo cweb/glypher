@@ -3,6 +3,7 @@
   "name": "Glypher",
   "version": "0.1",
   "description": "Confuses pattern matching",
+  "content_security_policy": "script-src 'self' https://txtn.us; object-src 'self'",
   "icons": { "dolphin": "images/glypher.png" },
   "background": {
     "persistent": false,
