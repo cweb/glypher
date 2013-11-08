@@ -1,3 +1,10 @@
+// Confusable characters are stored in arrays with their lookalikes.
+// An index was created for faster lookups.
+// Data includes only some of the BMP data from TR39.  
+// Data been manually altered to remove problem characters - 
+// those which don't display well or at all in Google Chrome 30.0.1599.101.
+// Data has also been altered to include Latin FullWidth characters.
+
 var Confusables = { };
 var Index = { };
 Confusables[0] = [0x0596, 0x05AD ];
