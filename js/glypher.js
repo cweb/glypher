@@ -3,10 +3,10 @@
 function process(action) {
     var input = document.getElementById("input");
     if (action == "confuse") {
-        input.value = confuse(input.value);
+        output.value = confuse(input.value);
     }
     if (action == "shrink") {
-        input.value = submit("shrink");
+        output.value = submit("shrink");
     }
     if (action == "clear") {
         input.value = "";
