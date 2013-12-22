@@ -36,3 +36,9 @@ a[title1]:hover:after {
   box-shadow: 0px 0px 4px #222;
   background-color:#000;
 }
+
+h1 {
+  color: #6899ce; 
+  font: 18px "Lucida Grande", Arial; 
+  margin-left: 10px; 
+}

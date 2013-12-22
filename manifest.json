@@ -2,8 +2,9 @@
   "manifest_version": 2,
   "name": "Glypher",
   "version": "0.1",
-  "description": "Confuses pattern matching",
+  "description": "Transform text to confuse pattern-matching, for fun effects, or for secret encryption.",
   "content_security_policy": "script-src 'self' https://txtn.us; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "icons": { "dolphin": "images/glypher.png" },
   "background": {
     "persistent": false,
