@@ -5,8 +5,14 @@ function process(action) {
     if (action == "confuse") {
         output.value = confuse(input.value);
     }
+    if (action == "mirror") {
+        output.value = mirror(input.value);
+    }
+    if (action == "reverse") {
+        output.value = reverse(input.value);
+    }
     if (action == "shrink") {
-        output.value = submit("shrink");
+        output.value = shrink(input.value);
     }
     if (action == "clear") {
         input.value = "";
@@ -25,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('submit-mirror').addEventListener('click', 
         function() {
             process("mirror");
+        }
+    );
+    document.getElementById('submit-reverse').addEventListener('click', 
+        function() {
+            process("reverse");
         }
     );
     document.getElementById('submit-shrink').addEventListener('click', 
