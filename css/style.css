@@ -42,3 +42,8 @@ h1 {
   font: 18px "Lucida Grande", Arial; 
   margin-left: 10px; 
 }
+
+.funchar {
+  font-size: 3em;
+  box-shadow: 3px 3px 10px 5px #000, 0 0 4px rgba(0, 0, 0, .5) inset;
+}
