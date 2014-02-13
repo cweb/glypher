@@ -1,5 +1,5 @@
 body {
-
+  font-style: Garamond, Helvetica, Arial, sans-serif;
 }
 
 textarea {
@@ -43,7 +43,14 @@ h1 {
   margin-left: 10px; 
 }
 
-.funchar {
+.symbol {
   font-size: 3em;
-  box-shadow: 3px 3px 10px 5px #000, 0 0 4px rgba(0, 0, 0, .5) inset;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin: 2px;
+  text-align: center;
+
 }
