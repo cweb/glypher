@@ -1,4 +1,4 @@
-
+// Copyright (c) 2014 txtn.us
 var Mirrored = {};
 Mirrored["A"] = "A";
 Mirrored["B"] = "ᙠ";

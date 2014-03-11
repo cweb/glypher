@@ -1,3 +1,4 @@
+// Copyright (c) 2014 txtn.us
 // Confusable characters are stored in arrays with their lookalikes.
 // An index was created for faster lookups.
 // Data includes only some of the BMP data from TR39.  

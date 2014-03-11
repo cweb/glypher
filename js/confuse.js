@@ -1,3 +1,4 @@
+// Copyright (c) 2014 txtn.us
 function confuse(input) {
 	var output = "";
 	var pointer;
