@@ -13,14 +13,20 @@
 </head>
 <body>
 
-<h1>Glypher :: Textual Trickery</h1>
+<h1>Glypher :: Text Transformer</h1>
 <p>Use Glypher to transform your text.  Confuse NSA pattern-matching with lookalike characters, flip and mirror text for fun, shrink text into cute little gnome sizes, and encrypt secret messages between friends.</p>
 <div id="transforms">
 <button id="submit-confuse" title="">Confuse</button>
 <button id="submit-shrink">Shrink</button>
 <button id="submit-mirror">Mirror</button>
 <button id="submit-reverse">Reverse</button>
-<a href="http://txtn.us/secret-encoder-decoder" target="_blank" title="Encrpt and decrypt messages between friends">Secret encoder...</a>
+<!--
+  TODO: Chrome does not display these characters yet,
+  but Firefox does.  Keep the code here and uncomment
+  when Chrome has the right fonts.
+ <button id="submit-bold">Bold</button> -->
+<a href="#Symbols" title="Special symbols and emoticons">Symbols...</a>
+<a href="http://txtn.us/secret-encoder-decoder" target="_blank" title="Encrypt and decrypt messages between friends">Encrypter...</a>
 <a href="http://txtn.us/glypher" target="_blank" title="Help on using this extension">Help...</a>
 <a href="http://txtn.us/contact" target="_blank" title="Send feedback, suggestions, and bug reports.">Contact...</a>
 <textarea id="input"></textarea>
@@ -28,6 +34,7 @@
 <textarea id="output"></textarea>
 </div>
 <br />
+<a name="Symbols"></a>
 <div id="symbols">
 <div class="symbol">&copy;</div>
 <div class="symbol">&cent;</div>

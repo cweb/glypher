@@ -3,21 +3,25 @@
 function process(action) {
     var input = document.getElementById("input");
     if (action == "confuse") {
-        output.value = confuse(input.value);
+        output.innerHTML = confuse(input.value);
     }
     if (action == "mirror") {
-        output.value = mirror(input.value);
+        output.innerHTML = mirror(input.value);
     }
     if (action == "reverse") {
-        output.value = reverse(input.value);
+        output.innerHTML = reverse(input.value);
     }
     if (action == "shrink") {
-        output.value = shrink(input.value);
+        output.innerHTML = shrink(input.value);
+    }
+    if (action == "bold") {
+        output.innerHTML = bold(input.value);
     }
     if (action == "clear") {
         input.value = "";
     }
 }
+
 
 // Add event listeners once the DOM has fully loaded.
 

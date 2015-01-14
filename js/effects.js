@@ -45,3 +45,19 @@ function shrink(input) {
 	}
 	return output;
 }
+
+function bold(input) {
+	var output = "";
+	// Input is a valid string
+	if (typeof input === "string") {
+		// Iterate over string
+		for (var i = 0; i < input.length; i++) {
+			var c = input.charAt(i);
+			if (c in Bold) {
+				output += Bold[c];
+			}
+			else (output += c)
+		}
+	}
+	return output;
+}
